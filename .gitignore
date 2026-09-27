@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+.ipynb_checkpoints/
+mlruns/
+mlartifacts/
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.h5

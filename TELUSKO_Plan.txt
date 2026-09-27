@@ -1,0 +1,35 @@
+What You Will Learn
+How LLMs, transformers, tokens, and embeddings actually work under the hood
+
+Prompt engineering that works in practice: few-shot, task decomposition, the ReAct pattern, reflection, and reasoning-model prompting
+
+OpenAI from the ground up: the Chat and Responses API, the Agents SDK, function calling, hosted tools, and structured outputs with Pydantic.
+
+LangChain for real applications: tools, agents, agent middleware, and real-world document ingestion with OCR, tables, and page-level citations
+
+Production RAG: chunking, hybrid search, metadata filtering, reranking, corrective and adaptive RAG, and RAG evaluation
+
+LangGraph for real agents: state graphs, memory and persistence, human-in-the-loop control, context engineering, multi-agent systems, and Deep Agents
+
+CrewAI for multi-agent orchestration: agents, tasks, crews, and event-driven Flows
+
+Agent interoperability: building and consuming MCP servers, and connecting agents with the Agent2Agent protocol
+
+Agent security and reliability: prompt injection, tool misuse, memory poisoning, guardrails, and per-user isolation, mapped to the OWASP Top 10
+
+Evaluation and observability with LangSmith, including tracing, datasets, and production monitoring
+
+Production APIs and user interfaces: FastAPI, streaming with SSE and WebSockets, and clients with Streamlit, Chainlit, Gradio, or React and Next.js
+
+Deployment on the cloud: Amazon Bedrock AgentCore and the Google Cloud agent stack, with CI/CD and quality gates
+
+Vector databases: FAISS, Chroma, PGVector, and Qdrant
+
+Running free open-source models locally with Ollama and Hugging Face
+
+The Forward Deployed Engineer workflow: map a customer problem, build the agent, deploy it, and own it in production.
+
+Technologies covered: Python, OpenAI, LangChain, LangGraph, CrewAI, MCP, A2A, Pydantic, FastAPI, Ollama, Hugging Face, FAISS, Chroma, PGVector, Qdrant, LangSmith, Docker, GitHub Actions, Amazon Bedrock AgentCore, and Google Cloud
+
+Built Around the Forward-Deployed Engineer Role
+The Forward Deployed Engineer (FDE) is one of the highest-paid and fastest-growing roles in AI right now, and this course is designed to get you ready for it. Instead of writing code in isolation, a Forward Deployed Engineer (FDE) embeds with a team, understands the real problem, and delivers a working system from start to finish. Every stage of this course mirrors that workflow: understand the problem, build the agent, secure it, evaluate it, deploy it, and keep it running. Each hands-on project is framed as a real customer scenario, so by the end you are not just familiar with the tools, you have practiced the exact way this role delivers value inside a company.
