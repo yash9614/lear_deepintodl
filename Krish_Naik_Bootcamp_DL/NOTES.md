@@ -1,8 +1,10 @@
 # Krish Naik Bootcamp Notes — ML + Deep Learning
 
-Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML) and the DL folder, plus Codebasics Deep Learning Takeaways (CH7–CH13) already present in this repo.
+Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML) and the DL folder, plus Codebasics Deep Learning Takeaways (CH7–CH13) and exercise solutions.
 
-**See also**: [INTERVIEW_QUESTIONS.md](./INTERVIEW_QUESTIONS.md) for interview-focused questions with industrial relevance.
+**See also**:
+- [MOST_IMPORTANT_CONCEPTS.md](./MOST_IMPORTANT_CONCEPTS.md) — **start here** (highlighted essentials + code patterns)
+- [INTERVIEW_QUESTIONS.md](./INTERVIEW_QUESTIONS.md) — interview questions with industrial relevance
 
 ---
 
@@ -57,34 +59,40 @@ Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://gi
 
 ---
 
-## 2. Deep Learning Core (Codebasics Takeaways CH7–CH13 + Krish materials)
+## 2. Deep Learning Core (Codebasics Takeaways CH7–CH13 + Krish materials + Exercise Solutions)
 
 ### Neural Networks in PyTorch (CH7)
 - Subclass `nn.Module` and implement `forward`.
 - Use `DataLoader` for batching + shuffling (reduces overfitting).
 - **Binary Cross Entropy + Sigmoid** preferred over MSE for binary classification (convex surface, penalizes confident errors).
 - Categorical Cross Entropy for multi-class.
+- Practical: `nn.Sequential(Linear → ReLU → Linear → ReLU → Linear)` is a common starting architecture.
 
 ### Optimizers (CH8)
 - **SGD + Momentum**: Accelerates in consistent directions, dampens oscillations.
 - **RMSProp**: Adaptive learning rate using moving average of squared gradients.
 - **Adam**: Combines momentum + RMSProp. Default choice for most deep learning tasks.
+- **AdamW**: Preferred for Transformers (decoupled weight decay).
+- Training loop must include `optimizer.zero_grad()` → `loss.backward()` → `optimizer.step()`.
 
 ### Regularization (CH9)
-- **Dropout**: Randomly drops neurons during training (typical p=0.2–0.5).
-- **L1/L2**: Penalty on large weights (L1 can zero features).
+- **Dropout**: Randomly drops neurons during training (typical p=0.2–0.5). Training loss becomes noisier; validation loss improves.
+- **L1/L2**: Penalty on large weights (L1 can zero features). Too high weight decay can cause divergence.
 - **Batch Normalization**: Normalizes layer inputs → higher learning rates, less sensitivity to initialization, mild regularization.
 - **Early Stopping**: Stop when validation performance plateaus (patience parameter).
+- **Data Augmentation**: Highest-ROI technique for CNNs (random flip, crop).
 
 ### Hyperparameter Tuning (CH10)
 - GridSearchCV (exhaustive, expensive) vs RandomSearchCV (faster sampling).
 - **Optuna**: Bayesian optimization + pruning of unpromising trials. Preferred for large search spaces in deep learning.
+- Most sensitive: learning rate, batch size, dropout, architecture size.
 
 ### CNNs (CH11)
 - Kernels extract spatial features (edges, textures).
 - Pooling reduces spatial size and computation.
 - Hierarchical feature learning (low-level → high-level).
 - CNNs lack built-in scale/rotation invariance → need data augmentation.
+- **Transfer Learning**: Freeze backbone, replace final FC layer, train only the head. Industry standard for vision tasks.
 
 ### Sequence Models (CH12)
 - Types: One-to-Many, Many-to-One, Many-to-Many.
@@ -97,6 +105,7 @@ Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://gi
 - Masked self-attention in decoder prevents looking ahead.
 - Self-supervised training: CLM (GPT-style) and MLM (BERT-style).
 - Positional encodings inject order information.
+- **Fine-tuning pattern**: Tokenizer → `BertForSequenceClassification` → AdamW (lr=1e-5) → CrossEntropyLoss.
 
 ### Practical ANN Example (Krish)
 - Customer Churn with full preprocessing pipeline + Streamlit deployment.
@@ -108,23 +117,26 @@ Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://gi
 - Modular pipeline (NETWORKsecurity example): Ingestion → Validation → Transformation → Training → Artifacts.
 - **MLflow + Dagshub** for experiment tracking and model registry.
 - Streamlit apps for quick serving of trained models.
+- Prefer pre-trained models + fine-tuning over training from scratch in production.
 
 ---
 
 ## 4. Recommended Learning Path
 
-1. **Tabular ML first**: Linear models → Trees → Ensembles (RF, XGBoost) → Metrics & CV.
-2. **Unsupervised**: Clustering + Anomaly Detection.
-3. **Deep Learning fundamentals**: PyTorch basics → Optimizers → Regularization → Hyperparameter tuning.
-4. **Architectures**: CNNs → Sequence models (RNN/LSTM/GRU) → Transformers.
-5. **Production**: MLflow, Streamlit, modular pipelines.
-6. Practice with the interview questions in `INTERVIEW_QUESTIONS.md`.
-7. Combine with existing exercises in this repo (PyTorch, CNN, Transformers folders).
+1. **Start with MOST_IMPORTANT_CONCEPTS.md** (highlighted essentials + code patterns).
+2. **Tabular ML first**: Linear models → Trees → Ensembles (RF, XGBoost) → Metrics & CV.
+3. **Unsupervised**: Clustering + Anomaly Detection.
+4. **Deep Learning fundamentals**: PyTorch basics → Optimizers → Regularization → Hyperparameter tuning.
+5. **Architectures**: CNNs → Sequence models (RNN/LSTM/GRU) → Transformers.
+6. **Production**: MLflow, Streamlit, modular pipelines.
+7. Practice with the interview questions in `INTERVIEW_QUESTIONS.md`.
+8. Combine with existing exercises in this repo (PyTorch, CNN, Transformers folders).
 
 ---
 
 **Sources**:
 - Krish Naik bootcamp: `Nrish_Karik_SataDience/ML` and `/DL`
 - Codebasics Deep Learning Takeaways: `DL_Takeaways_CH7.pdf` through `CH13.pdf` in this repo
+- Codebasics exercise solutions (CNN, Regularization, Hyperparameter Tuning, Transformers, Neural Networks)
 
-Last expanded: 2026-11-23
+Last expanded: 2026-11-23 (further iteration)
