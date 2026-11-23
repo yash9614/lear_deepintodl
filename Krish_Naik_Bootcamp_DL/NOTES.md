@@ -1,6 +1,8 @@
 # Krish Naik Bootcamp Notes — ML + Deep Learning
 
-Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML) and the DL folder. Full PDFs and notebooks remain in the source repo.
+Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML) and the DL folder, plus Codebasics Deep Learning Takeaways (CH7–CH13) already present in this repo.
+
+**See also**: [INTERVIEW_QUESTIONS.md](./INTERVIEW_QUESTIONS.md) for interview-focused questions with industrial relevance.
 
 ---
 
@@ -55,44 +57,74 @@ Extracted and organized from materials in [Nrish_Karik_SataDience/ML](https://gi
 
 ---
 
-## 2. Deep Learning (from DL folder)
+## 2. Deep Learning Core (Codebasics Takeaways CH7–CH13 + Krish materials)
 
-### RNNs & Sequential Models
-- Simple RNN for sequence data (IMDB sentiment classification).
-- Vanishing / exploding gradients limit long-term memory.
-- **LSTM**: Forget, input, and output gates control information flow.
-- **GRU**: Simplified version of LSTM (fewer parameters).
-- **Bidirectional RNN**: Processes sequence in both directions for richer context.
-- **Encoder-Decoder + Attention**: Seq2Seq foundation. Attention allows the decoder to focus on relevant encoder states.
+### Neural Networks in PyTorch (CH7)
+- Subclass `nn.Module` and implement `forward`.
+- Use `DataLoader` for batching + shuffling (reduces overfitting).
+- **Binary Cross Entropy + Sigmoid** preferred over MSE for binary classification (convex surface, penalizes confident errors).
+- Categorical Cross Entropy for multi-class.
 
-### Attention & Transformers
-- Self-attention (Query, Key, Value).
-- Multi-head attention + positional encoding.
-- Basis of modern LLMs (GPT, BERT, etc.).
+### Optimizers (CH8)
+- **SGD + Momentum**: Accelerates in consistent directions, dampens oscillations.
+- **RMSProp**: Adaptive learning rate using moving average of squared gradients.
+- **Adam**: Combines momentum + RMSProp. Default choice for most deep learning tasks.
 
-### Practical ANN Example
-- Customer Churn prediction with full preprocessing (LabelEncoder, OneHotEncoder, StandardScaler).
-- Hyperparameter tuning and Streamlit deployment.
+### Regularization (CH9)
+- **Dropout**: Randomly drops neurons during training (typical p=0.2–0.5).
+- **L1/L2**: Penalty on large weights (L1 can zero features).
+- **Batch Normalization**: Normalizes layer inputs → higher learning rates, less sensitivity to initialization, mild regularization.
+- **Early Stopping**: Stop when validation performance plateaus (patience parameter).
+
+### Hyperparameter Tuning (CH10)
+- GridSearchCV (exhaustive, expensive) vs RandomSearchCV (faster sampling).
+- **Optuna**: Bayesian optimization + pruning of unpromising trials. Preferred for large search spaces in deep learning.
+
+### CNNs (CH11)
+- Kernels extract spatial features (edges, textures).
+- Pooling reduces spatial size and computation.
+- Hierarchical feature learning (low-level → high-level).
+- CNNs lack built-in scale/rotation invariance → need data augmentation.
+
+### Sequence Models (CH12)
+- Types: One-to-Many, Many-to-One, Many-to-Many.
+- Vanishing gradients → LSTM (3 gates: Forget, Input, Output) and GRU (2 gates: Update, Reset).
+- LSTM/GRU still relevant for time-series even though Transformers dominate NLP.
+
+### Transformers (CH13)
+- Encoder produces contextual embeddings; Decoder generates output sequence.
+- Self-attention (Q, K, V) + Multi-head attention.
+- Masked self-attention in decoder prevents looking ahead.
+- Self-supervised training: CLM (GPT-style) and MLM (BERT-style).
+- Positional encodings inject order information.
+
+### Practical ANN Example (Krish)
+- Customer Churn with full preprocessing pipeline + Streamlit deployment.
 
 ---
 
-## 3. Production & End-to-End Patterns (from ML materials)
+## 3. Production & End-to-End Patterns
 
-- Full pipeline structure seen in **NETWORKsecurity** project:
-  - Data Ingestion → Validation (drift reports) → Transformation → Model Training → Artifacts storage.
-- **MLflow + Dagshub**: Experiment tracking, model registry, and reproducibility. Reference in `mlflow_dagshub.txt`.
-- Streamlit apps for serving (already copied for RNN, ANN Churn, LSTM).
+- Modular pipeline (NETWORKsecurity example): Ingestion → Validation → Transformation → Training → Artifacts.
+- **MLflow + Dagshub** for experiment tracking and model registry.
+- Streamlit apps for quick serving of trained models.
 
 ---
 
 ## 4. Recommended Learning Path
 
 1. **Tabular ML first**: Linear models → Trees → Ensembles (RF, XGBoost) → Metrics & CV.
-2. **Unsupervised**: Clustering + Anomaly Detection for feature engineering / outlier handling.
-3. **Deep Learning**: ANNs → RNNs/LSTM → Attention/Transformers.
-4. **Production**: MLflow tracking, Streamlit deployment, modular pipeline structure.
-5. Combine with existing exercises in this repo (PyTorch, CNN, Transformers) for a complete portfolio.
+2. **Unsupervised**: Clustering + Anomaly Detection.
+3. **Deep Learning fundamentals**: PyTorch basics → Optimizers → Regularization → Hyperparameter tuning.
+4. **Architectures**: CNNs → Sequence models (RNN/LSTM/GRU) → Transformers.
+5. **Production**: MLflow, Streamlit, modular pipelines.
+6. Practice with the interview questions in `INTERVIEW_QUESTIONS.md`.
+7. Combine with existing exercises in this repo (PyTorch, CNN, Transformers folders).
 
 ---
 
-**Source**: All PDFs, notebooks, and datasets are in `Nrish_Karik_SataDience/ML` and `/DL`. Download locally for hands-on practice. Last expanded: 2026-11-23.
+**Sources**:
+- Krish Naik bootcamp: `Nrish_Karik_SataDience/ML` and `/DL`
+- Codebasics Deep Learning Takeaways: `DL_Takeaways_CH7.pdf` through `CH13.pdf` in this repo
+
+Last expanded: 2026-11-23
