@@ -12,7 +12,8 @@ This folder organizes and extracts key materials from Krish Naik's bootcamp + Co
 | **MOST_IMPORTANT_CONCEPTS.md** | 🔴 Highlighted must-master concepts (start here) |
 | **NOTES.md** | Structured concept summaries, algorithms, learning path |
 | **INTERVIEW_QUESTIONS.md** | Interview questions + industrial relevance (by topic) |
-| **QUIZ.md** | 32 MCQs for quick self-review of core DL concepts |
+| **QUIZ.md** | 32 MCQs for quick self-review of core **Deep Learning** concepts |
+| **ML_QUIZ.md** | 40 MCQs for quick self-review of core **Machine Learning** concepts |
 
 ---
 
@@ -58,7 +59,7 @@ Full notebooks, datasets, and PDFs are in the source `ML/` folder.
 1. **Start with MOST_IMPORTANT_CONCEPTS.md** — the highlighted essentials.
 2. Read **NOTES.md** for deeper structured concepts and learning path.
 3. Practice with **INTERVIEW_QUESTIONS.md** (questions + industrial relevance).
-4. Test yourself with **QUIZ.md** (32 MCQs).
+4. Test yourself with **QUIZ.md** (32 Deep Learning MCQs) and **ML_QUIZ.md** (40 Machine Learning MCQs).
 5. Study the takeaway PDFs in the repo root and the exercise notebooks for hands-on coding.
 6. Run the included Streamlit apps after placing model files:
    ```bash
