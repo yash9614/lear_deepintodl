@@ -1,7 +1,9 @@
 # Deep Learning & ML Interview Questions (with Industrial Relevance)
 
-Based on Krish Naik bootcamp materials + Codebasics Deep Learning Takeaways (CH7–CH13).  
+Based on Krish Naik bootcamp materials + Codebasics Deep Learning Takeaways (CH7–CH13) + Exercise Solutions.  
 Organized by topic. Each section includes **Interview Questions** and **Industrial Relevance**.
+
+**See also**: [MOST_IMPORTANT_CONCEPTS.md](./MOST_IMPORTANT_CONCEPTS.md) for the highlighted must-master list.
 
 ---
 
@@ -13,6 +15,7 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 3. Explain the difference between Dataset and DataLoader in PyTorch.
 4. How does Categorical Cross Entropy differ from Binary Cross Entropy?
 5. Why do we shuffle data every epoch in DataLoader?
+6. How do you implement a simple network with `nn.Sequential` (e.g., 128 → 64 → 64 → 1)?
 
 **Industrial Relevance**
 - PyTorch is the dominant framework for research and production ML at companies like Meta, Tesla, and OpenAI.
@@ -29,6 +32,8 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 3. What is the role of the momentum coefficient (β)?
 4. When would you prefer RMSProp over Adam?
 5. How do adaptive optimizers help with sparse gradients?
+6. What is AdamW and why is it preferred for fine-tuning Transformers?
+7. Difference between Batch GD, Mini-batch GD, and Stochastic GD?
 
 **Industrial Relevance**
 - Adam is the default optimizer in most modern deep learning pipelines (NLP, CV, recommendation systems).
@@ -45,6 +50,8 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 3. What is Batch Normalization and how does it help training?
 4. Explain Early Stopping and the concept of patience.
 5. How do BatchNorm and Dropout complement each other?
+6. How would you manually compute the L1 regularization term and its gradient in PyTorch?
+7. Why must you call `model.train()` vs `model.eval()` when using Dropout/BatchNorm?
 
 **Industrial Relevance**
 - Dropout and BatchNorm are standard in almost every production CNN/Transformer.
@@ -61,6 +68,7 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 3. Explain Bayesian optimization in the context of hyperparameter tuning.
 4. What is pruning in Optuna?
 5. Which hyperparameters are most sensitive in deep learning (learning rate, batch size, etc.)?
+6. How would you use Optuna to tune a FashionMNIST classifier (learning rate, dropout, number of layers)?
 
 **Industrial Relevance**
 - Hyperparameter tuning is a major cost center. Optuna + pruning is widely used to reduce experiment time.
@@ -77,11 +85,14 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 3. Why do CNNs struggle with scale and rotation by default?
 4. Explain hierarchical feature learning in CNNs.
 5. How does the receptive field grow as we go deeper?
+6. What does a typical CNN block look like (Conv → BatchNorm → ReLU → Pool)?
+7. Explain Transfer Learning: when and why do you freeze the backbone?
 
 **Industrial Relevance**
 - CNNs power computer vision systems in autonomous driving (Tesla, Waymo), medical imaging (radiology), and retail (Amazon Go).
 - Understanding kernels and pooling is essential for debugging model performance on image tasks.
 - Data augmentation is critical in industry because pure CNNs lack built-in scale/rotation invariance.
+- Transfer learning is the standard approach for most production vision systems (faster, better with less data).
 
 ---
 
@@ -111,12 +122,15 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 5. Compare Causal Language Modeling (CLM) vs Masked Language Modeling (MLM).
 6. How do positional encodings work?
 7. Why can Transformers capture long-range dependencies better than RNNs?
+8. How do you fine-tune BERT for a classification task in PyTorch (tokenizer, BertForSequenceClassification, AdamW, learning rate)?
+9. What is the role of `attention_mask` and `input_ids`?
 
 **Industrial Relevance**
 - Transformers (BERT, GPT, T5, Llama) are the backbone of modern NLP and multimodal systems used by Google, OpenAI, Anthropic, and every major tech company.
 - Self-attention powers search ranking, chatbots, code generation, and document understanding.
 - Understanding encoder vs decoder is key for choosing the right architecture (BERT for classification, GPT for generation).
 - Production LLM systems rely on these concepts for fine-tuning, RAG, and agentic applications.
+- Fine-tuning pre-trained models (rather than training from scratch) is the industry standard for NLP tasks.
 
 ---
 
@@ -137,9 +151,10 @@ Organized by topic. Each section includes **Interview Questions** and **Industri
 ---
 
 ## Quick Prep Tips
-- Be ready to write PyTorch code for a simple NN, CNN, or LSTM.
+- Be ready to write PyTorch code for a simple NN, CNN, or BERT fine-tuning loop.
 - Explain trade-offs (accuracy vs latency, overfitting vs underfitting).
 - Connect concepts to real systems (recommendation, vision, NLP, time-series).
 - Practice explaining the “why” behind each technique, not just the “what”.
+- Review MOST_IMPORTANT_CONCEPTS.md before any interview.
 
 Last updated: 2026-11-23
