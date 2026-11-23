@@ -1,20 +1,27 @@
 # Krish Naik Bootcamp Materials (ML + Deep Learning)
 
-This folder organizes and extracts key materials from Krish Naik's bootcamp, sourced from:
+This folder organizes and extracts key materials from Krish Naik's bootcamp + Codebasics Deep Learning Takeaways, sourced from:
 - **Deep Learning**: [Nrish_Karik_SataDience/DL](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/DL)
 - **Machine Learning**: [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML)
+- **Codebasics Takeaways**: `DL_Takeaways_CH7.pdf` – `CH13.pdf` (already in repo root)
 
-See **NOTES.md** for extracted concepts, algorithm summaries, evaluation tips, and a recommended learning path.
+### Key Documents
+| File | Purpose |
+|------|---------|
+| **NOTES.md** | Structured concept summaries, algorithms, learning path |
+| **INTERVIEW_QUESTIONS.md** | Interview questions + industrial relevance (by topic) |
 
 ---
 
-## Deep Learning Topics (PDFs + Notebooks)
-- Simple RNN, Bidirectional RNN
-- Backward Propagation
-- Problems with RNN → LSTM & GRU
-- Attention Mechanism
-- Encoder-Decoder Seq2Seq
-- Transformers
+## Deep Learning Topics
+- PyTorch Neural Networks (CH7)
+- Optimizers: Momentum, RMSProp, Adam (CH8)
+- Regularization: Dropout, L1/L2, BatchNorm, Early Stopping (CH9)
+- Hyperparameter Tuning: Grid/Random Search, Optuna (CH10)
+- CNNs: Kernels, Pooling, Hierarchical features (CH11)
+- Sequence Models: RNN types, Vanishing Gradients, LSTM, GRU (CH12)
+- Transformers: Attention, Multi-head, Encoder-Decoder, CLM/MLM (CH13)
+- Plus Krish materials: Simple RNN, LSTM/GRU, Attention, Transformers PDFs
 
 ### Practical DL Projects (Streamlit apps included)
 | Project | App Path | What it does |
@@ -27,7 +34,7 @@ Model files (`.h5`, `.pkl`) and full notebooks are in the source `DL/` folder.
 
 ---
 
-## Machine Learning Topics (PDFs + Notebooks)
+## Machine Learning Topics (from Krish)
 - Linear / Multiple / Polynomial Regression + Ridge/Lasso/ElasticNet
 - Logistic Regression
 - KNN (Classifier & Regressor) + KD/Ball Tree
@@ -38,20 +45,21 @@ Model files (`.h5`, `.pkl`) and full notebooks are in the source `DL/` folder.
 - Anomaly Detection: Isolation Forest, LOF
 - PCA
 - Performance Metrics, Overfitting/Underfitting, Cross-Validation
-- End-to-end project structure (`NETWORKsecurity`) + MLflow/Dagshub reference
+- End-to-end project structure (`NETWORKsecurity`) + MLflow/Dagshub
 
-Full notebooks, datasets (height-weight, economic index, Travel, cardekho, etc.), and PDFs are in the source `ML/` folder.
+Full notebooks, datasets, and PDFs are in the source `ML/` folder.
 
 ---
 
 ## How to Use
-1. Read **NOTES.md** for a structured summary of concepts.
-2. Download specific PDFs/notebooks from the source repository for deep study and hands-on coding.
-3. Run the included Streamlit apps after placing model files:
+1. Start with **NOTES.md** for structured concepts and learning path.
+2. Practice with **INTERVIEW_QUESTIONS.md** (questions + why they matter in industry).
+3. Study the takeaway PDFs in the repo root and download specific notebooks from the source repos for hands-on work.
+4. Run the included Streamlit apps after placing model files:
    ```bash
    pip install -r requirements.txt
    streamlit run app.py
    ```
-4. Use this alongside the existing exercises in `lear_deepintodl` (PyTorch, CNN, Transformers, etc.) for a complete portfolio.
+5. Combine with existing exercises in this repo (PyTorch, CNN, Transformers folders) for a complete portfolio.
 
 Last updated: 2026-11-23
