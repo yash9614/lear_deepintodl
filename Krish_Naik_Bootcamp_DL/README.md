@@ -1,45 +1,57 @@
-# Krish Naik Deep Learning Bootcamp Materials
+# Krish Naik Bootcamp Materials (ML + Deep Learning)
 
-This folder integrates materials from Krish Naik's Deep Learning bootcamp (sourced from the [Nrish_Karik_SataDience](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/DL) repository).
+This folder organizes and extracts key materials from Krish Naik's bootcamp, sourced from:
+- **Deep Learning**: [Nrish_Karik_SataDience/DL](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/DL)
+- **Machine Learning**: [Nrish_Karik_SataDience/ML](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/ML)
 
-## Topics Covered (PDFs)
-- Simple RNN
-- Deep Learning Basics (1-4 Deep Learning)
+See **NOTES.md** for extracted concepts, algorithm summaries, evaluation tips, and a recommended learning path.
+
+---
+
+## Deep Learning Topics (PDFs + Notebooks)
+- Simple RNN, Bidirectional RNN
 - Backward Propagation
-- Problems with RNN
-- Bidirectional RNN
-- Complete LSTM and GRU
+- Problems with RNN → LSTM & GRU
 - Attention Mechanism
 - Encoder-Decoder Seq2Seq
-- Transformers (best final transformers)
+- Transformers
 
-Full PDFs and large model files (.h5, .pkl) are available in the source repo under the `DL/` directory. Download them locally for detailed study.
+### Practical DL Projects (Streamlit apps included)
+| Project | App Path | What it does |
+|---------|----------|--------------|
+| Simple RNN IMDB | `simple_rnn_imdb/app.py` | Sentiment analysis |
+| ANN Customer Churn | `ann_churn/app.py` | Churn probability prediction |
+| LSTM Next Word | `lstm_next_word/app.py` | Next-word prediction (Hamlet) |
 
-## Practical Projects (copied here for easy access)
-### 1. Simple RNN - IMDB Sentiment Analysis
-- Notebooks: `simplernn.ipynb`, `embedding.ipynb`, `prediction.ipynb` (in source)
-- Streamlit app: `simple_rnn_imdb/app.py` (see below)
-- Model: simple_rnn_imdb.h5 (download from source)
+Model files (`.h5`, `.pkl`) and full notebooks are in the source `DL/` folder.
 
-### 2. ANN Classification - Customer Churn Prediction
-- Notebooks: experiments.ipynb, hyperparametertuningann.ipynb, salaryregression.ipynb, prediction.ipynb
-- Streamlit app: `ann_churn/app.py`
-- Supporting files: model.h5, encoders, scaler (from source)
+---
 
-### 3. LSTM Next Word Prediction (Hamlet)
-- Notebook: experiemnts.ipynb
-- Streamlit app: `lstm_next_word/app.py`
-- Model and tokenizer in source
+## Machine Learning Topics (PDFs + Notebooks)
+- Linear / Multiple / Polynomial Regression + Ridge/Lasso/ElasticNet
+- Logistic Regression
+- KNN (Classifier & Regressor) + KD/Ball Tree
+- Naive Bayes (and variants)
+- SVM / SVC / SVR + Kernels
+- Decision Trees, Random Forest, AdaBoost, Gradient Boosting, XGBoost
+- Clustering: K-Means, Hierarchical, DBSCAN
+- Anomaly Detection: Isolation Forest, LOF
+- PCA
+- Performance Metrics, Overfitting/Underfitting, Cross-Validation
+- End-to-end project structure (`NETWORKsecurity`) + MLflow/Dagshub reference
+
+Full notebooks, datasets (height-weight, economic index, Travel, cardekho, etc.), and PDFs are in the source `ML/` folder.
+
+---
 
 ## How to Use
-1. Clone or download the full materials from the source repository.
-2. Run the Streamlit apps locally after placing the model files in the respective folders:
+1. Read **NOTES.md** for a structured summary of concepts.
+2. Download specific PDFs/notebooks from the source repository for deep study and hands-on coding.
+3. Run the included Streamlit apps after placing model files:
    ```bash
    pip install -r requirements.txt
    streamlit run app.py
    ```
-3. Study the PDFs for theory and notebooks for hands-on TensorFlow/Keras implementations.
-
-This structure helps organize your deep learning learning path alongside the existing exercises in this repo (CNN, PyTorch, Transformers, etc.).
+4. Use this alongside the existing exercises in `lear_deepintodl` (PyTorch, CNN, Transformers, etc.) for a complete portfolio.
 
 Last updated: 2026-11-23
