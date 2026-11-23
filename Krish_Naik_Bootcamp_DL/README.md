@@ -64,5 +64,3 @@ Full notebooks, datasets, and PDFs are in the source `ML/` folder.
    streamlit run app.py
    ```
 6. Combine with existing exercises in this repo for a complete portfolio.
-
-Last updated: 2026-11-23
